@@ -87,8 +87,8 @@ server <- function(input, output) {
     # Step 4: Order body systems by total subjects (same as Q2)
     ae_counts$AESOC <- fct_reorder(ae_counts$AESOC, ae_counts$n_subjects, .fun = sum)
     
-    # Step 5: Set severity stacking order
-    ae_counts$AESEV <- factor(ae_counts$AESEV, levels = c("MILD", "MODERATE", "SEVERE"))
+    # Step 5: Set severity stacking order (matching sample output)
+    ae_counts$AESEV <- factor(ae_counts$AESEV, levels = c("SEVERE", "MODERATE", "MILD"))
     
     ae_counts
   })
