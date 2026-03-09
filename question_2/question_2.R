@@ -48,7 +48,7 @@ print(head(ae_counts, 10))
 
 # Now we have the raw counts. Before building the chart, we need to:
 # Step 3: Order AESOC so the chart Y-axis goes from fewest to most subjects
-# Step 4: Order AESEV so the bar segments always stack MILD → MODERATE → SEVERE
+# Step 4: Order AESEV so the bar segments stack SEVERE → MODERATE → MILD
 
 # Step 3: Order AESOC by total subjects
 # The question says: "ordered by increasing frequency of total subjects per SOC"
@@ -60,8 +60,8 @@ cat("\n AESOC factor levels (bottom to top of chart)\n")
 print(levels(ae_counts$AESOC))
 
 # Step 4: Set severity order for consistent stacking
-# Make AESEV an ordered factor so the bars always stack MILD → MODERATE → SEVERE
-ae_counts$AESEV <- factor(ae_counts$AESEV, levels = c("MILD", "MODERATE", "SEVERE"))
+# Make AESEV an ordered factor so the bars stack SEVERE → MODERATE → MILD (base)
+ae_counts$AESEV <- factor(ae_counts$AESEV, levels = c("SEVERE", "MODERATE", "MILD"))
 
 # Step 5: Build the chart
 ae_plot <- ggplot(ae_counts, aes(x = n_subjects, y = AESOC, fill = AESEV)) +
