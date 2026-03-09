@@ -41,3 +41,8 @@ Produces a horizontal stacked bar chart showing unique subjects per System Organ
 Integrates the Question 2 visualization into a Shiny dashboard with a `checkboxGroupInput` filter for treatment arm. The chart updates reactively based on the selected arms.
 
 **Run:** Open `question_3.R` in RStudio → Click "Run App"
+
+
+### Video
+
+Playlist: https://www.youtube.com/watch?v=mh3GcjAovTA&list=PL9S_qvAAoDPT4iEo1X-REKuJ1OtPr75_5&index=1
